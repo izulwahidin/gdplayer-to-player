@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 
 export async function load({url}){
     try {
-        const downloadRawResponse = await fetch(`https://gdplayer.to/download/?${url.searchParams.get('id')}`);
+        const downloadRawResponse = await fetch(`https://omeplay.com/download/?${url.searchParams.get('id')}`);
 
         if(!downloadRawResponse.ok){
             throw error(500, 'download page error');
@@ -19,7 +19,7 @@ export async function load({url}){
 
         const currentTimestamp = Math.round(new Date().getTime());
 
-        const sourceEndpoint = `https://rafo3.filemoon.xyz/api/?${kaken}&_=${currentTimestamp}`;
+        const sourceEndpoint = `https://omeplay.com/api/?${kaken}&_=${currentTimestamp}`;
 
         const response = await fetch(sourceEndpoint);
 
